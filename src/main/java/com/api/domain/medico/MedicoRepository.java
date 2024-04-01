@@ -25,7 +25,7 @@ public interface MedicoRepository extends JpaRepository<Medico, Long> {
         c.data = :data
         
         )
-        order by rand()
+        order by random()
         limit 1
         
 """)
