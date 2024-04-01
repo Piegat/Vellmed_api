@@ -26,4 +26,6 @@ public class ConsultaController {
         return ResponseEntity.ok(new DadosDetalhamentoConsulta(dados.idMedico(), dados.idMedico(), dados.data()));
     }
 
+
+
 }

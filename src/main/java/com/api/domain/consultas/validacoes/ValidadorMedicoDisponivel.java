@@ -23,8 +23,9 @@ public class ValidadorMedicoDisponivel implements ValidadorAgendamentodeConsulta
     public void validar(DadosAgendamentoConsulta dados){
 
 
-        var medico = repository.existsByIdMedico_IdAndData(dados.idMedico(), dados.data());
-        if(medico){
+        Consultas consulta = repository.findByMedicoLivre(dados.idMedico(), dados.data());
+
+        if(consulta != null){
             throw  new ValidacaoException("Medico ocupado");
         }
 
