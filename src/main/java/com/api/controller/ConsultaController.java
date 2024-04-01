@@ -3,6 +3,7 @@ package com.api.controller;
 import com.api.domain.consultas.AgendaDeConsulta;
 import com.api.domain.consultas.DadosAgendamentoConsulta;
 import com.api.domain.consultas.DadosDetalhamentoConsulta;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("consultas")
+@SecurityRequirement(name = "bearer-key")
 public class ConsultaController {
 
     @Autowired
